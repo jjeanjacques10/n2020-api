@@ -1,9 +1,6 @@
 class SuggestionRepository():
 
-    def insert(self):   
-        print("DAsdas")
-
-    def findAllSuggestion(self, database):
+    def findAll(self, database):
         data = []
         row = {}
         

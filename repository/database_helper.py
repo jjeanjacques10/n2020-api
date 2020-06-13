@@ -20,3 +20,14 @@ class DatabaseHelper():
         myresult = mycursor.fetchall()
         return myresult
  
+    def findById(self, sql, id):
+        pass
+
+    def findByEmailPassword(self, sql, data):
+        mydb = self.connect_database()
+        mycursor = mydb.cursor()
+
+        mycursor.execute(sql, data)
+           
+        myresult = mycursor.fetchall()
+        return myresult
