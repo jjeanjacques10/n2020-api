@@ -16,6 +16,7 @@ class SuggestionRepository():
             row["url"] = item[4]
             row["image_url"] = item[5]
             data.append(row)
+            row = []
 
         
         return data
