@@ -26,7 +26,7 @@ def login_user():
 
     database = DatabaseHelper() 
     response = userRepository.login(database, email, password)
-    return jsonify(response)
+    return jsonify([response])
 
 def main():
     port = int(os.environ.get("PORT", 5000))
