@@ -11,7 +11,7 @@ cors = CORS(app, resource={r"/*":{"origins": "*"}})
 
 suggestionsRepository = SuggestionRepository()
      
-@app.route("/", methods=["GET"])
+@app.route("/suggestions", methods=["GET"])
 def hello():
     database = DatabaseHelper() 
     response = suggestionsRepository.findAllSuggestion(database)
