@@ -2,8 +2,12 @@ from models.user_model import UserModel
 
 class UserRepository():
 
-    def insert(self):   
-        print("aasdas")
+    def insert(self, database, user):   
+        row = (user["name"], user["photoUrl"], user["phone"], user["email"],  user["password"])
+
+        SQL_INSERT = "INSERT INTO `Users`(`name`, `photo_url`, `phone`, `email`, `password`) VALUES (%s,%s,%s,%s,%s)"
+        result = database.insertRow(SQL_INSERT, row)
+        return result
 
     def login(self, database, email, password):
         row = {}

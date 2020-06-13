@@ -28,6 +28,17 @@ class DatabaseHelper():
         mycursor = mydb.cursor()
 
         mycursor.execute(sql, data)
-           
+
         myresult = mycursor.fetchall()
         return myresult
+
+
+    def insertRow(self, sql, data):
+        mydb = self.connect_database()
+        mycursor = mydb.cursor()
+
+        mycursor.execute(sql, data)
+
+        mydb.commit()
+
+        return mycursor.rowcount
