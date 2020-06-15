@@ -28,10 +28,9 @@ def login_user():
     response = userRepository.login(database, email, password)
     return jsonify([response])
 
-@app.route("/user/", methods=["POST"])
+@app.route("/user", methods=["POST"])
 def insert_user():
     user = request.get_json()
-    print(user)
     database = DatabaseHelper() 
     response = userRepository.insert(database, user)
     return jsonify(response)
