@@ -44,6 +44,16 @@ def messages_list(userId):
     response = messageRepository.findById(database,userId)
     return jsonify(response)
 
+@app.route("/messages", methods=["POST"])
+def messages_insert():
+    message = request.get_json()
+    print(message)
+    
+    database = DatabaseHelper() 
+    response = messageRepository.insert(database, message)
+    
+    return jsonify({"id":1})
+
 def main():
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)

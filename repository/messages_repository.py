@@ -1,3 +1,5 @@
+import time
+
 class MessageRepository():
 
     def findById(self, database, user_id):
@@ -16,4 +18,12 @@ class MessageRepository():
             row = {}
         return data
         
+    def insert(self, database, message):   
+        now = time.strftime('%Y-%m-%d %H:%M:%S')
+        row = (message["content"], now, message["userId"], message["type"])
 
+        SQL_INSERT = "INSERT INTO `Messages`(`content`, `time`, `user_id`, `type`) VALUES (%s,%s,%s,%s)"
+        result = database.insertRow(SQL_INSERT, row)
+        return result
+
+        
