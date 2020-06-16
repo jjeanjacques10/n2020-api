@@ -9,6 +9,13 @@ class UserRepository():
         result = database.insertRow(SQL_INSERT, row)
         return result
 
+    def update(self, database, user, userId):   
+        row = (user["name"], user["photoUrl"], user["phone"], user["email"],  user["password"], userId)
+
+        SQL_INSERT = "UPDATE `Users` SET `name`=%s,`photo_url`=%s,`phone`=%s,`email`=%s,`password`=%s WHERE `id` = %s"
+        result = database.insertRow(SQL_INSERT, row)
+        return result
+
     def login(self, database, user):
         row = {}
         data = []

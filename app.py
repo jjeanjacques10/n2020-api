@@ -37,6 +37,17 @@ def insert_user():
     response = userRepository.insert(database, user)
     return jsonify(response)
 
+@app.route("/user/<userId>", methods=["PUT"])
+def update_user(userId):
+    
+    user = request.get_json()
+    print(user)
+    
+    database = DatabaseHelper() 
+    response = userRepository.update(database, user, userId)
+    
+    return jsonify(response)
+
 @app.route("/messages/<userId>", methods=["GET"])
 def messages_list(userId):
 
