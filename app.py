@@ -46,7 +46,7 @@ def update_user(userId):
     database = DatabaseHelper() 
     response = userRepository.update(database, user, userId)
     
-    return jsonify(response)
+    return jsonify({"id":userId})
 
 @app.route("/messages/<userId>", methods=["GET"])
 def messages_list(userId):
