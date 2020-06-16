@@ -24,6 +24,7 @@ def hello():
 @app.route("/user/login", methods=["POST"])
 def login_user():
     user = request.get_json()
+    print(user)
 
     database = DatabaseHelper() 
     response = userRepository.login(database, user)
