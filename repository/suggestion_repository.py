@@ -4,7 +4,7 @@ class SuggestionRepository():
         data = []
         row = {}
         
-        SQL_SELECT = "SELECT * FROM `Suggestions`"
+        SQL_SELECT = "SELECT * FROM `Suggestions` ORDER BY RAND()"
         for item in database.findAll(SQL_SELECT):
             row["id"] = item[0]
             row["title"] = item[1]
