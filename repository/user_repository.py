@@ -9,10 +9,10 @@ class UserRepository():
         result = database.insertRow(SQL_INSERT, row)
         return result
 
-    def login(self, database, email, password):
+    def login(self, database, user):
         row = {}
         data = []
-        user = (email, password)
+        user = (user.email, user.password)
         SQL_SELECT = "SELECT * FROM `Users` WHERE email = %s and password = %s"
         result = database.findByEmailPassword(SQL_SELECT, user)
         if(len(result) > 0):

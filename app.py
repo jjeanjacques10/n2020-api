@@ -21,13 +21,12 @@ def hello():
     response = suggestionsRepository.findAll(database)
     return jsonify(response)
 
-@app.route("/user/login", methods=["GET"])
+@app.route("/user/login", methods=["POST"])
 def login_user():
-    email = request.args.get('email')
-    password = request.args.get('password')
+    user = request.get_json()
 
     database = DatabaseHelper() 
-    response = userRepository.login(database, email, password)
+    response = userRepository.login(database, user)
     return jsonify([response])
 
 @app.route("/user", methods=["POST"])
