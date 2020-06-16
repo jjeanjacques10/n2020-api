@@ -12,7 +12,7 @@ class UserRepository():
     def login(self, database, user):
         row = {}
         data = []
-        user = (user.email, user.password)
+        user = (user["email"], user["password"])
         SQL_SELECT = "SELECT * FROM `Users` WHERE email = %s and password = %s"
         result = database.findByEmailPassword(SQL_SELECT, user)
         if(len(result) > 0):
