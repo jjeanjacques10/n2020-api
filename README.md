@@ -1,20 +1,17 @@
 # API - N2020 - Goodbot
 
-API para o aplicativo Goodbot
+A API desenvolvida para o aplicativo [Goodbot](https://github.com/jjeanjacques10/n2020-mobile)
+
+## Tecnologias 
+
+- Python
+- Flask
 
 ## Endpoints
 
-- [GET] /suggestions
+- Conversas
+- Usuários
+- Sugestões
 
-```
-[
-    "id": 0,
-    "title": "",
-    "type": "",
-    "description": "",
-    "url": ""
-]
-```
-
-- [GET] /user/login
-
+---
+Developed by [Jean Jacques Barros](https://github.com/jjeanjacques10)
